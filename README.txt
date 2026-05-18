@@ -1,11 +1,17 @@
-# Kingshot Transfer Vault static prototype
+# Kingshot Transfer Vault static prototype v2
 
+Open `index.html` in a browser.
 
+Demo access password:
+kingshotbeta
 
-This is a static prototype only:
+New in v2:
+- Demo sign-in required before submitting reports
+- Screenshot upload is required
+- Submitting a report automatically creates/updates linked server, alliance, and player records
+
+Still static:
 - No real database
-- No real login
-- No real file upload storage
+- No real authentication
+- No real screenshot storage
 - No server-side security
-
-It is useful for UI, structure, and product testing before rebuilding in Lovable/Supabase or another stack.
