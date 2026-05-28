@@ -1,7 +1,8 @@
-v2 deploy retry
+v2
 
 Open `index.html` in a browser.
 
+Demo access password:
 
 
 New in v2:
