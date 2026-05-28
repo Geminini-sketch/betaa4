@@ -1,17 +1,18 @@
-v2
+# Kingshot Transfer Vault static prototype v3
 
-Open `index.html` in a browser.
+Password: kingshotbeta
 
-Demo access password:
+New:
+- Login controls are in the top bar
+- Demo sign in is required to submit reports
+- Admin page is hidden until Admin sign in
+- Admin actions require admin role
+- Screenshots are required
+- Reports auto-link server/alliance/player records
 
+Still a static prototype: no real database, no real auth, no real screenshot storage.
 
-New in v2:
-- Demo sign-in required before submitting reports
-- Screenshot upload is required
-- Submitting a report automatically creates/updates linked server, alliance, and player records
-
-Still static:
-- No real database
-- No real authentication
-- No real screenshot storage
-- No server-side security
+New in v4:
+- Public Reports page hides pending and rejected submissions
+- Admin can see all reports in Review queue
+- Approved/disputed reports can be visible publicly

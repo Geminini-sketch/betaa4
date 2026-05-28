@@ -1,122 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kingshot Transfer Vault</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div id="gate" class="gate">
-    <div class="gate-card">
-      <div class="logo">KV</div>
-      <h1>Kingshot Transfer Vault</h1>
-      <p>Closed beta for Kingshot server transfer intelligence, servers 928–1277.</p>
-      <input id="gatePassword" type="password" placeholder="Access password" />
-      <button onclick="enterSite()">Enter beta</button>
-      <p class="hint">Demo password: <strong>kingshotbeta</strong></p>
-    </div>
-  </div>
-
-  <div id="app" class="app hidden">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="logo small">KV</div>
-        <div>
-          <strong>Transfer Vault</strong>
-          <span>928–1277</span>
-        </div>
-      </div>
-      <nav>
-        <button class="nav active" onclick="showView('home', this)">Overview</button>
-        <button class="nav" onclick="showView('servers', this)">Servers</button>
-        <button class="nav" onclick="showView('alliances', this)">Alliances</button>
-        <button class="nav" onclick="showView('people', this)">Players</button>
-        <button class="nav" onclick="showView('reports', this)">Reports</button>
-        <button class="nav admin" onclick="showView('admin', this)">Admin</button>
-      </nav>
-      <p class="disclaimer">All reports are community submissions and may be incomplete, disputed, or under review.</p>
-    </aside>
-
-    <main>
-      <header class="topbar">
-        <input id="search" oninput="renderServers()" placeholder="Search server, alliance, player..." />
-        <button onclick="showView('submit')">Submit report</button>
-      </header>
-
-      <section id="home" class="view">
-        <p class="eyebrow">Closed beta · Kingshot migration intelligence</p>
-        <h1>A sober map for transfer decisions, because server politics somehow became geopolitics.</h1>
-        <p class="lead">Browse servers, alliances, player leadership notes, and incident reports before moving.</p>
-        <div class="stats">
-          <div><strong>350</strong><span>Seeded servers</span></div>
-          <div><strong>4</strong><span>Sample alliances</span></div>
-          <div><strong>3</strong><span>Pending reports</span></div>
-          <div><strong>Admin</strong><span>Moderated publishing</span></div>
-        </div>
-        <div class="grid two">
-          <div class="card">
-            <h2>Evidence-first wording</h2>
-            <p>No “toxic person” labels. Records use incident reports, confidence levels, dispute status, and context limits.</p>
-          </div>
-          <div class="card">
-            <h2>Transfer-focused pages</h2>
-            <p>Each server can track activity, transfer openness, conflict risk, alliances, leaders, and notes.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="servers" class="view hidden">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Server atlas</p>
-            <h1>Servers 928–1277</h1>
-          </div>
-          <button onclick="seedServers()">Reset demo servers</button>
-        </div>
-        <div id="serverGrid" class="grid"></div>
-      </section>
-
-      <section id="alliances" class="view hidden">
-        <p class="eyebrow">Alliance index</p>
-        <h1>Alliances</h1>
-        <div id="allianceGrid" class="grid"></div>
-      </section>
-
-      <section id="people" class="view hidden">
-        <p class="eyebrow">Players / leaders</p>
-        <h1>Known player records</h1>
-        <div id="peopleGrid" class="grid"></div>
-      </section>
-
-      <section id="reports" class="view hidden">
-        <p class="eyebrow">Incident reports</p>
-        <h1>Reports</h1>
-        <div id="reportGrid" class="grid"></div>
-      </section>
-
-      <section id="submit" class="view hidden">
-        <p class="eyebrow">Submit evidence</p>
-        <h1>New incident report</h1>
-        <form class="form" onsubmit="submitReport(event)">
-          <label>Title<input required id="rTitle" placeholder="e.g. Transfer agreement dispute" /></label>
-          <label>Server number<input required id="rServer" type="number" min="928" max="1277" placeholder="1022" /></label>
-          <label>Related alliance / player<input id="rTarget" placeholder="Alliance or player name" /></label>
-          <label>Incident date<input id="rDate" type="date" /></label>
-          <label>Description<textarea required id="rDesc" placeholder="Describe what happened. Keep it factual."></textarea></label>
-          <label>Screenshot upload<input id="rFile" type="file" accept="image/*" /></label>
-          <button type="submit">Submit as pending</button>
-        </form>
-      </section>
-
-      <section id="admin" class="view hidden">
-        <p class="eyebrow">Admin dashboard</p>
-        <h1>Review queue</h1>
-        <div id="adminGrid" class="grid"></div>
-      </section>
-    </main>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kingshot Transfer Vault</title><link rel="stylesheet" href="styles.css"></head><body>
+<div id="gate" class="gate"><div class="gate-card"><div class="logo">KV</div><h1>Kingshot Transfer Vault</h1><p>Closed beta for Kingshot server transfer intelligence, servers 928–1277.</p><input id="gatePassword" type="password" placeholder="Access password"><button onclick="enterSite()">Enter beta</button><p class="hint">Demo password: <b>kingshotbeta</b></p></div></div>
+<div id="app" class="app hidden"><aside><div class="brand"><div class="logo small">KV</div><div><b>Transfer Vault</b><span>928–1277</span></div></div><nav>
+<button class="nav active" onclick="showView('home',this)">Overview</button><button class="nav" onclick="showView('servers',this)">Servers</button><button class="nav" onclick="showView('alliances',this)">Alliances</button><button class="nav" onclick="showView('people',this)">Players</button><button class="nav" onclick="showView('reports',this)">Reports</button><button id="adminNav" class="nav admin hidden" onclick="showView('admin',this)">Admin</button>
+</nav><p class="disclaimer">All reports are community submissions and may be incomplete, disputed, or under review.</p></aside>
+<main><header><input id="search" oninput="renderServers()" placeholder="Search server, alliance, player..."><div class="auth"><span id="loginStatus">Not signed in</span><button id="loginBtn" onclick="demoLogin()">Demo sign in</button><button id="adminLoginBtn" onclick="demoAdminLogin()">Admin sign in</button><button id="logoutBtn" class="ghost hidden" onclick="demoLogout()">Sign out</button></div><button onclick="showView('submit')">Submit report</button></header>
+<section id="home" class="view"><p class="eyebrow">Closed beta · Kingshot migration intelligence</p><h1>A sober map for transfer decisions, because server politics somehow became geopolitics.</h1><p class="lead">Browse servers, alliances, player leadership notes, and incident reports before moving.</p><div class="stats"><div><b>350</b><span>Seeded servers</span></div><div><b id="allianceCount">4</b><span>Alliances</span></div><div><b id="reportCount">3</b><span>Reports</span></div><div><b>Admin</b><span>Moderated publishing</span></div></div><div class="grid two"><div class="card"><h2>Required screenshots</h2><p>Reports cannot be submitted without screenshot evidence.</p></div><div class="card"><h2>Admin-only review</h2><p>Pending/rejected reports are hidden from public view. Admin sign-in reveals the review queue.</p></div></div></section>
+<section id="servers" class="view hidden"><div class="section-head"><div><p class="eyebrow">Server atlas</p><h1>Servers 928–1277</h1></div><button onclick="seedServers()">Reset demo servers</button></div><div id="serverGrid" class="grid"></div></section>
+<section id="alliances" class="view hidden"><p class="eyebrow">Alliance index</p><h1>Alliances</h1><div id="allianceGrid" class="grid"></div></section>
+<section id="people" class="view hidden"><p class="eyebrow">Players / leaders</p><h1>Known player records</h1><div id="peopleGrid" class="grid"></div></section>
+<section id="reports" class="view hidden"><p class="eyebrow">Incident reports</p><h1>Reports</h1><div id="reportGrid" class="grid"></div></section>
+<section id="submit" class="view hidden"><p class="eyebrow">Submit evidence</p><h1>New incident report</h1><div id="submitWarning" class="notice"></div><form class="form" onsubmit="submitReport(event)"><label>Title<input required id="rTitle"></label><label>Server number<input required id="rServer" type="number" min="928" max="1277"></label><label>Alliance name<input required id="rAlliance"></label><label>Player / leader name<input required id="rPlayer"></label><label>Incident date<input id="rDate" type="date"></label><label>Description<textarea required id="rDesc"></textarea></label><label>Screenshot upload <span class="required">required</span><input required id="rFile" type="file" accept="image/*"></label><button type="submit">Submit as pending</button></form></section>
+<section id="admin" class="view hidden"><p class="eyebrow">Admin dashboard</p><h1>Review queue</h1><div class="notice show">Admin-only prototype area. Pending and rejected reports are visible here only.</div><div id="adminGrid" class="grid"></div></section>
+</main></div><script src="script.js"></script></body></html>
