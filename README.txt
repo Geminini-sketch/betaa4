@@ -2,8 +2,7 @@
 
 Open `index.html` in a browser.
 
-Demo access password:
-kingshotbeta
+
 
 New in v2:
 - Demo sign-in required before submitting reports
