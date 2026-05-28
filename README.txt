@@ -1,4 +1,4 @@
-# Kingshot Transfer Vault static prototype v2
+v2 deploy retry
 
 Open `index.html` in a browser.
 
