@@ -16,3 +16,8 @@ New in v4:
 - Public Reports page hides pending and rejected submissions
 - Admin can see all reports in Review queue
 - Approved/disputed reports can be visible publicly
+
+New in v5:
+- Fixed broken topbar layout
+- Search/login/admin/submit controls now wrap cleanly
+- Better desktop and mobile spacing
